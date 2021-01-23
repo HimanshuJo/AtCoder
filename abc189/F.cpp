@@ -17,24 +17,24 @@ int main() {
   bool possible = true;
   std::vector<long double> moves_to_victory(squares_count + moves_count);
   std::vector<long double> restart_probability(squares_count + moves_count);
-  long double average = 0, average_restart = 0;
+  long double total_moves = 0, count_restart = 0;
 
   for (int position = squares_count - 1; position >= 0; --position) {
     if (restart_positions.count(position)) {
       moves_to_victory[position] = 0;
       restart_probability[position] = 1;
     } else {
-      moves_to_victory[position] = average / moves_count + 1;
-      restart_probability[position] = average_restart / moves_count;
+      moves_to_victory[position] = total_moves / moves_count + 1;
+      restart_probability[position] = count_restart / moves_count;
     }
 
-    average -= moves_to_victory[position + moves_count];
-    average += moves_to_victory[position];
+    total_moves -= moves_to_victory[position + moves_count];
+    total_moves += moves_to_victory[position];
 
-    average_restart -= restart_probability[position + moves_count];
-    average_restart += restart_probability[position];
+    count_restart -= restart_probability[position + moves_count];
+    count_restart += restart_probability[position];
 
-    if (average_restart >= moves_count) {
+    if (count_restart >= moves_count) {
       possible = false;
     }
   }

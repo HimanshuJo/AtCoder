@@ -1,6 +1,3 @@
-#include <algorithm>
-#include <iostream>
-#include <tuple>
 #include <iostream>
 #include <string>
 

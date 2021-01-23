@@ -13,7 +13,7 @@ int main() {
   std::cin >> operations_count;
   const auto operations = ReadArray<std::string>(operations_count);
 
-  // dp[i][value] - numer of sequences {x_0, ..., x_i} with y_i = value
+  // dp[i][value] - number of sequences {x_0, ..., x_i} with y_i = value
   std::vector<std::vector<int64_t>> dp(2,
     std::vector<int64_t>(operations_count + 1, 0));
   dp[false][0] = dp[true][0] = 1;
@@ -33,7 +33,7 @@ int main() {
   }
 
   // this dp can be simplified to O(1) space
-  // wath https://www.twitch.tv/anandoza for details
+  // watch https://www.twitch.tv/anandoza for details
 
   std::cout << dp[true][operations_count] << "\n";
 

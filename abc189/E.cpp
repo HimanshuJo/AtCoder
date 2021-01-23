@@ -15,7 +15,7 @@ const int kReflectVertical = 4;
 
 struct Operation {
   int type;
-  int64_t arg;
+  int64_t position;
 };
 
 struct Query {
@@ -43,7 +43,7 @@ int main() {
     std::cin >> operation.type;
     if (operation.type == kReflectVertical ||
         operation.type == kReflectHorizontal) {
-      std::cin >> operation.arg;
+      std::cin >> operation.position;
     }
   }
 
@@ -79,10 +79,10 @@ int main() {
         std::tie(xs, ys) = std::make_pair(-ys, xs);
         std::tie(px, py) = std::make_pair(-py, px);
       } else if (operation.type == kReflectHorizontal) {
-        px = 2 * operation.arg - px;
+        px = 2 * operation.position - px;
         xs = -xs;
       } else {  // operation.type == kReflectVertical
-        py = 2 * operation.arg - py;
+        py = 2 * operation.position - py;
         ys = -ys;
       }
       ++op_id;
@@ -110,7 +110,7 @@ int main() {
   }
 
   // this dp can be simplified to operations on 3x3 matrices
-  // wath https://www.twitch.tv/anandoza for details
+  // watch https://www.twitch.tv/anandoza for details
 
   for (const auto& answer : answers) {
     std::cout << answer.x << " " << answer.y << "\n";
