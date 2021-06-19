@@ -2,7 +2,7 @@
     - don't use floating point arithmetic whenever possible
     - use constants for special srings denoting players, events, etc.
 - B:
-    - multiplication is often better than division
+    - multiplication is better than division
     - multiplication can cause overflow
     - simulation is sometimes quick enough to pass
     - binary search over the answer
@@ -14,8 +14,8 @@
     - use long integers whenever you are not sure about the possible range of some value, \*unless you are running short on memory
     
 - D:
-    - `const int MAXA = 200200;` is often safer than `const int MAXA = 200000;`
-    - whenever you write some code twice, make it a template and save it to yor library
+    - `const int MAXA = 200200;` is safer than `const int MAXA = 200000;`
+    - whenever you write some code twice, make it a template and save it to your library
     - disjoint set union is useful for graph connectivity problems
 
 - E:
