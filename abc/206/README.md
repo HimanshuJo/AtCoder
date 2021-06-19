@@ -22,4 +22,4 @@
     - sometimes it makes sense to switch between problems if you don't get useful ideas for some time
 
 - F:
-    - if you are already familiar with basic algorithms and data structures, you may find it useful reading about [Sprague-Grundy game theory(https://cp-algorithms.com/game_theory/sprague-grundy-nim.html)
+    - if you are already familiar with basic algorithms and data structures, you may find it useful reading about [Sprague-Grundy game theory](https://cp-algorithms.com/game_theory/sprague-grundy-nim.html)
